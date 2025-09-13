@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "contents": [&#13;
+    {&#13;
+      "parts": [&#13;
+        {&#13;
+          "text": "You are an AI retention assistant for a SaaS learning platform.\n\nAnalyze the following churn risk record and recommend retention actions. The record data is:\n\nUser ID: ${user_id}\nRisk Score: ${risk_score}\nRisk Level: ${risk_level}\nDetected Risk Area: ${detected_risk_area}\nContributing Factors: ${contributing_factors}\nSentiment Analysis: ${sentiment_analysis}\nIntervention Required: ${intervention_required}\n\n### Instructions:\n1. ONLY recommend actions from this fixed list:\n   - Exclusive offers and time-limited discounts\n   - Free plan extensions (1-2 months premium access)\n   - Personal outreach and customer success calls\n   - Feature unlocks and advanced module access\n   - Tailored email campaigns based on churn triggers\n   - Loyalty perks and milestone-based incentives\n   - Personalized pricing adjustments\n   - In-app nudges (digital campaigning, popups/banners)\n2. Output MUST be valid JSON (no markdown, no extra text).\n3. Use this schema:\n{\n  \"retention_action_analysis\": \"string (5-6 sentences explaining which actions you recommend and why, based on the data)\",\n  \"action_taken\": \"string (comma-separated list of recommended actions, from the above list only)\",\n  \"internal_improvements\": \"string (if sentiment/contributing factors mention platform issues, describe what internal improvements are needed,like video content is not good or understandable or course content is not good or web interface is not good like these issues should be taken care by the saas platform right, you might mention that in a sentence explaining why in a single sentence or simply mention areas where it should improve or work on separated by commas like in the retention actions, hope you will help with this and your response should be soo good and acurate)\"\n}\n\n### Respond ONLY with valid JSON."&#13;
+        }&#13;
+      ]&#13;
+    }&#13;
+  ]&#13;
+}</content>
+        <function_name>post</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Gemini Retention API [ post ]</qualified_name>
+        <rest_endpoint/>
+        <rest_message display_value="Gemini Retention API">af826d2183f322107f442a4279da1ec3</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-05 06:00:59</sys_created_on>
+        <sys_id>6ef42de183f322107f442a4279da1ebc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>post</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_rest_message_fn_6ef42de183f322107f442a4279da1ebc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-05 06:04:19</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

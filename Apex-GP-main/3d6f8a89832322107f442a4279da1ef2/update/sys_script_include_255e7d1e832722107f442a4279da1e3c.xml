@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_apex_gp.SaaSCustomerImport</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>SaaSCustomerImport</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var SaaSCustomerImport = Class.create();
+SaaSCustomerImport.prototype = {
+    initialize: function () {},
+
+    importNewCustomers: function () {
+        try {
+            // 1. Collect existing emails from table
+            var emails = [];
+            var grEmails = new GlideRecord('x_snc_apex_gp_customer_profiles');
+            grEmails.query();
+            while (grEmails.next()) {
+                if (grEmails.user_email)
+                    emails.push(grEmails.getValue('user_email'));
+            }
+
+            // 2. Build JSON body with emails
+            var requestBody = JSON.stringify({
+                emails: emails
+            });
+
+            // 3. Call API
+            var rm = new sn_ws.RESTMessageV2('SaaS Customer API', 'post'); 
+            rm.setRequestBody(requestBody);
+            var resp = rm.execute();
+
+            var status = resp.getStatusCode();
+            var body = resp.getBody();
+
+            if (status != 200) {
+                gs.error('[SaaSCustomerImport] Failed API call. Status: ' + status + ' Body: ' + body);
+                return;
+            }
+
+            var parsed = JSON.parse(body);
+            if (!parsed.success || !parsed.users) {
+                gs.error('[SaaSCustomerImport] Invalid API response');
+                return;
+            }
+
+            // 4. Insert/update new users
+            var users = parsed.users;
+            for (var i = 0; i < users.length; i++) {
+                var u = users[i];
+                var gr = new GlideRecord('x_snc_apex_gp_customer_profiles');
+                gr.addQuery('user_id', u.userId);
+                gr.query();
+
+                if (gr.next()) {
+                    // update existing
+                } else {
+                    gr.initialize();
+                }
+
+                gr.setValue('user_id', u.userId);
+                gr.setValue('user_name', u.name);
+                gr.setValue('user_email', u.email);
+                gr.setValue('subscription_plan', u.subscriptionPlan);
+                gr.setValue('no_of_enrolled_courses', u.totalEnrolledCourses);
+                gr.setValue('courses_enrolled', u.enrolledCourses.map(function(c){ return c.courseName; }).join(', '));
+                gr.setValue('completed_courses', u.totalCompletedCourses);
+                gr.setValue('completed_course', u.completedCourses.map(function(c){ return c.courseName; }).join(', '));
+                gr.update();
+            }
+
+            gs.info('[SaaSCustomerImport] Imported ' + users.length + ' new users');
+        } catch (e) {
+            gs.error('[SaaSCustomerImport] Exception: ' + e.message);
+        }
+    },
+
+    type: 'SaaSCustomerImport'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 05:29:42</sys_created_on>
+        <sys_id>255e7d1e832722107f442a4279da1e3c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>SaaSCustomerImport</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_script_include_255e7d1e832722107f442a4279da1e3c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-28 13:51:18</sys_updated_on>
+    </sys_script_include>
+</record_update>

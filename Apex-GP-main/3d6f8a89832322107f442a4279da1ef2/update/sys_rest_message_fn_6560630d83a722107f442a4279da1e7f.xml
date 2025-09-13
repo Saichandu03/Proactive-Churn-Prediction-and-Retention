@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>&#13;
+{&#13;
+  "contents": [&#13;
+    {&#13;
+      "role": "user",&#13;
+      "parts": [&#13;
+        {&#13;
+          "text": "You are a precise churn-risk analyst for a SaaS learning platform. You'll receive ALL past and present 'Usage Pattern' records for ONE user as a JSON array of objects (sorted by time). Each object has:\n\n- timestamp (ISO8601 string)\n- login_frequency_count (integer)\n- time_spent (duration string; examples: '30m', '2h', '1d 3h')\n- ticket_resolution_time (duration string)\n- no_of_support_tickets (integer)\n- subscription (free_plan|premium_plan|pro_plan)\n- communication (considered|ignored)\n- rating (1|2|3|4|5)\n- cancellation_or_refund_requests (string; may be empty)\n- feedback (string; may be empty)\n\nUse the business rules below exactly when computing risk:\n- login_frequency_count: &gt;5 = safe; ≤5 = risk (+20 pts)\n- no_of_support_tickets: &lt;3 = safe; ≥3 = risk (+15 pts)\n- communication: considered = safe; ignored = risk (+20 pts)\n- ticket_resolution_time: &gt;24h average = risk (+15 pts), else safe\n- rating: ≤2 = high risk (+20 pts), =3 = moderate risk (+10 pts), ≥4 = safe\n- sentiment (from feedback + cancellation_or_refund_requests): strong negative = +15 pts; mild negative = +8; neutral/positive = +0\n- subscription: recent downgrade or free_plan with declining engagement may contribute to risk (+5 to +10 pts depending on trend)\n\nScoring:\n- Start at 0. Add the points above per the latest data and relevant trends across history. Cap to 0–100.\n- risk_level mapping: 0–33=low, 34–66=medium, 67–100=high.\n- intervention_required: yes for medium/high; no for low.\n- intervention_status: always 'pending'.\n\nTrends to consider from timestamps: sustained decline in logins or time_spent; growing support tickets; worsening ratings; repeated refund/cancellation mentions; sustained ignored communication.\n\nPerform sentiment analysis on textual fields (feedback, cancellation_or_refund_requests)(make sure  you also consider the ticket resolution time also an important factor to detect the risk and mention in  contriuting factors if there is a risk) and summarize in 2–4 sentences for a manager (no markdown).\n\nReturn STRICTLY this JSON (no code fences, no extra text):\n{\n  \"user_id\": \"${user_id}\",\n  \"risk_score\": &lt;integer 0-100&gt;,\n  \"risk_level\": \"low|medium|high\",\n  \"detected_risk_area\": \"&lt;single short phrase&gt;\",\n  \"contributing_factors\": \"&lt;comma-separated list of factors&gt;\",\n  \"sentiment_analysis\": \"&lt;2-4 sentence manager-friendly summary&gt;\",\n  \"intervention_required\": \"yes|no\",\n  \"intervention_status\": \"pending\",\n  \"last_evaluated\",\n  \"in_progress\": \"&lt;current ISO8601 UTC&gt;\"\n}\n\nHere is the user's usage data array:\n${usage_data}"&#13;
+        }&#13;
+      ]&#13;
+    }&#13;
+  ]&#13;
+}</content>
+        <function_name>postdatatoai</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>gemini [ postdatatoai ]</qualified_name>
+        <rest_endpoint/>
+        <rest_message display_value="gemini">88302fc983a722107f442a4279da1ef9</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 15:25:02</sys_created_on>
+        <sys_id>6560630d83a722107f442a4279da1e7f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>postdatatoai</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_rest_message_fn_6560630d83a722107f442a4279da1e7f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-29 05:29:29</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_apex_gp.SaaSUsageImport</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>SaaSUsageImport</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var SaaSUsageImport = Class.create();
+SaaSUsageImport.prototype = {
+    initialize: function () {},
+
+    importUsagePatterns: function () {
+        try {
+            var customerGR = new GlideRecord('x_snc_apex_gp_customer_profiles');
+            customerGR.query();
+
+            while (customerGR.next()) {
+                var email = customerGR.getValue('user_email');
+                var userName = customerGR.getValue('user_name'); // get the username from customer table
+
+                if (!email) {
+                    gs.warn('[SaaSUsageImport] Skipping customer with no email.');
+                    continue;
+                }
+
+                var rm = new sn_ws.RESTMessageV2('SaaS Usage API', 'post'); // <-- method name must match your REST Message setup
+                rm.setRequestBody(JSON.stringify({ email: email }));
+
+                var resp = rm.execute();
+                var status = resp.getStatusCode();
+                var body = resp.getBody();
+
+                if (status != 200) {
+                    gs.error('[SaaSUsageImport] Failed API call for ' + email + '. Status: ' + status + ' Body: ' + body);
+                    continue;
+                }
+
+                var parsed = JSON.parse(body);
+                if (!parsed.success || !parsed.data) {
+                    gs.error('[SaaSUsageImport] Invalid API response for ' + email);
+                    continue;
+                }
+
+                var data = parsed.data;
+
+                // prepare usage record
+                var usageGR = new GlideRecord('x_snc_apex_gp_usage_pattern');
+                usageGR.initialize();
+
+                // map username -> user_id field in usage pattern
+                usageGR.setValue('user_id', userName);
+
+                // map fields
+                usageGR.setValue('timestamp', data.presentTimestamp);
+                usageGR.setValue('login_frequency_count', data.loginHistoryGrouped ? this._getLatestLoginCount(data.loginHistoryGrouped) : 0);
+                usageGR.setValue('no_of_support_tickets', data.ticketCount || 0);
+                usageGR.setValue('subscription', data.subscriptionPlan || 'free_plan');
+
+                if (data.feedbackStats && data.feedbackStats.feedbacks && data.feedbackStats.feedbacks.length > 0) {
+                    var latestFeedback = data.feedbackStats.feedbacks[0];
+                    usageGR.setValue('rating', latestFeedback.rating);
+                    usageGR.setValue('feedback', latestFeedback.description);
+                }
+
+                if (data.cancellationReasons && data.cancellationReasons.length > 0) {
+    var reasons = data.cancellationReasons.map(function(item) {
+        return item.cancellationReason;
+    });
+    usageGR.setValue('cancellation_or_refund_requests', reasons.join('; '));
+}
+
+
+                if (data.websiteUsageTime && data.websiteUsageTime.length > 0) {
+                    var latestDurationMin = data.websiteUsageTime[data.websiteUsageTime.length - 1].duration;
+                    var glideDuration = new GlideDuration(latestDurationMin * 60 * 1000); // minutes → ms
+                    usageGR.setValue('time_spent', glideDuration.getDurationValue());
+                }
+
+                usageGR.insert();
+
+                gs.info('[SaaSUsageImport] Inserted usage record for ' + email);
+            }
+        } catch (e) {
+            gs.error('[SaaSUsageImport] Exception: ' + e.message);
+        }
+    },
+
+    _getLatestLoginCount: function (loginHistoryGrouped) {
+        // get the latest date key from loginHistoryGrouped
+        var dates = Object.keys(loginHistoryGrouped);
+        if (dates.length === 0) return 0;
+
+        dates.sort(); // ascending
+        var latestDate = dates[dates.length - 1];
+        return loginHistoryGrouped[latestDate];
+    },
+
+    type: 'SaaSUsageImport'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-29 04:53:30</sys_created_on>
+        <sys_id>4c03919f832322107f442a4279da1ebb</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SaaSUsageImport</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_script_include_4c03919f832322107f442a4279da1ebb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-02 10:25:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

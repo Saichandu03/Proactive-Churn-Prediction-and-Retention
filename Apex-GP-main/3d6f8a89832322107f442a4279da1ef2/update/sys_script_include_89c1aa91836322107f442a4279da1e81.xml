@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_apex_gp.ApexGPChurnAIService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ApexGPChurnAIService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ApexGPChurnAIService = Class.create();
+ApexGPChurnAIService.prototype = {
+    initialize: function () {},
+
+    analyzeAndPersist: function (userId) {
+        try {
+            if (!userId) {
+                gs.error('[ChurnAI] Missing userId');
+                return null;
+            }
+
+            // 1) Build usage history array
+            var usageArr = this._buildUsageData(userId);
+            if (!usageArr.length) {
+                gs.warn('[ChurnAI] No usage data for user: ' + userId);
+                return null;
+            }
+
+            // 2) Call Gemini REST Message
+            var rm = new sn_ws.RESTMessageV2('gemini', 'postdatatoai');
+            rm.setStringParameterNoEscape('user_id', userId);
+            // Escape JSON so it fits safely in "text": "... ${usage_data} ..."
+            rm.setStringParameterNoEscape(
+                'usage_data',
+                JSON.stringify(usageArr).replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+            );
+
+            var resp = rm.execute();
+            var status = resp.getStatusCode();
+            var body = resp.getBody();
+            if (status < 200 || status >= 300) {
+                gs.error('[ChurnAI] HTTP ' + status + ' body=' + body);
+                return null;
+            }
+
+            // 3) Extract Gemini response text
+            var parsedEnvelope = this._safeParse(body);
+            var modelText = this._extractModelText(parsedEnvelope) || body;
+
+            gs.info('[ChurnAI] Raw Gemini response text for user ' + userId + ': ' + modelText);
+
+            // 4) Extract the JSON object
+            var cleanJSON = this._extractJSONObject(modelText);
+            var resultObj = this._safeParse(cleanJSON);
+
+            // 5) Normalize and fill defaults
+            resultObj = this._normalizeResult(userId, resultObj);
+
+            // 6) Upsert churn analysis record
+            this._upsertChurnRecord(userId, resultObj);
+
+            gs.info('[ChurnAI] Stored churn analysis for user: ' + userId + ' score=' + resultObj.risk_score);
+            return resultObj;
+
+        } catch (e) {
+            gs.error('[ChurnAI] Exception: ' + e.message);
+            return null;
+        }
+    },
+
+    /* ------------------ helpers ------------------ */
+
+    _buildUsageData: function (userId) {
+        var arr = [];
+        var gr = new GlideRecord('x_snc_apex_gp_usage_pattern');
+        gr.addQuery('user_id', userId);
+        if (gr.isValidField('timestamp')) {
+            gr.orderBy('timestamp');
+        } else {
+            gr.orderBy('sys_created_on');
+        }
+        gr.query();
+
+        while (gr.next()) {
+            arr.push({
+                timestamp: this._bestTimestamp(gr),
+                login_frequency_count: parseInt(gr.getValue('login_frequency_count'), 10) || 0,
+                time_spent: this._durationToShort(gr.getValue('time_spent')),
+                ticket_resolution_time: this._durationToShort(gr.getValue('ticket_resolution_time')),
+                no_of_support_tickets: parseInt(gr.getValue('no_of_support_tickets'), 10) || 0,
+                subscription: (gr.getValue('subscription') || '').toString(),
+                communication: (gr.getValue('communication') || '').toString(),
+                rating: parseInt(gr.getValue('rating'), 10) || 0,
+                cancellation_or_refund_requests: (gr.getValue('cancellation_or_refund_requests') || '').toString(),
+                feedback: (gr.getValue('feedback') || '').toString()
+            });
+        }
+        return arr;
+    },
+
+    _bestTimestamp: function (gr) {
+        var ts = gr.getValue('timestamp');
+        if (ts) return ts;
+        var gdt = new GlideDateTime(gr.getValue('sys_created_on'));
+        return gdt.getDisplayValueInternal();
+    },
+
+    _durationToShort: function (raw) {
+        if (!raw) return '0m';
+        var gd = new GlideDuration(raw);
+        var ms = gd.getNumericValue();
+        if (isNaN(ms) || ms <= 0) return '0m';
+
+        var totalMinutes = Math.floor(ms / 60000);
+        var days = Math.floor(totalMinutes / (60 * 24));
+        var hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+        var mins = totalMinutes % 60;
+
+        if (days > 0) return days + 'd ' + (hours > 0 ? hours + 'h' : '');
+        if (hours > 0) return hours + 'h ' + (mins > 0 ? mins + 'm' : '');
+        return mins + 'm';
+    },
+
+    _safeParse: function (text) {
+        try {
+            return JSON.parse(text);
+        } catch (e) {
+            return {};
+        }
+    },
+
+    _extractModelText: function (envelope) {
+        try {
+            if (envelope && envelope.candidates && envelope.candidates.length > 0) {
+                var c0 = envelope.candidates[0];
+                if (c0.content && c0.content.parts && c0.content.parts.length > 0) {
+                    var p0 = c0.content.parts[0];
+                    if (p0.text) return p0.text.toString();
+                }
+            }
+        } catch (e) {}
+        return '';
+    },
+
+    _extractJSONObject: function (text) {
+        if (!text) return '{}';
+        text = text.replace(/```json/gi, '').replace(/```/g, '').trim();
+        var start = text.indexOf('{');
+        var end = text.lastIndexOf('}');
+        if (start >= 0 && end > start) {
+            return text.substring(start, end + 1);
+        }
+        return '{}';
+    },
+
+    _normalizeResult: function (userId, obj) {
+        if (!obj || typeof obj !== 'object') obj = {};
+        obj.user_id = userId;
+
+        obj.risk_score = parseInt(obj.risk_score, 10);
+        if (isNaN(obj.risk_score)) obj.risk_score = 0;
+        if (obj.risk_score < 0) obj.risk_score = 0;
+        if (obj.risk_score > 100) obj.risk_score = 100;
+
+        obj.risk_level = (obj.risk_level || '').toString().toLowerCase();
+        if (['low','medium','high'].indexOf(obj.risk_level) === -1) {
+            obj.risk_level = (obj.risk_score >= 67) ? 'high' :
+                             (obj.risk_score >= 34 ? 'medium' : 'low');
+        }
+
+        obj.intervention_required = (obj.intervention_required || '').toString().toLowerCase();
+        if (obj.intervention_required !== 'yes' && obj.intervention_required !== 'no') {
+            obj.intervention_required = (obj.risk_level === 'medium' || obj.risk_level === 'high') ? 'yes' : 'no';
+        }
+
+        obj.intervention_status = (obj.intervention_status || '').toString().toLowerCase();
+        if (['pending','in_progress','completed'].indexOf(obj.intervention_status) === -1) {
+            obj.intervention_status = 'pending';
+        }
+
+        obj.last_evaluated = obj.last_evaluated || new GlideDateTime().getDisplayValueInternal();
+
+        obj.detected_risk_area = (obj.detected_risk_area || 'unknown').toString();
+        obj.contributing_factors = (obj.contributing_factors || 'not provided').toString();
+        obj.sentiment_analysis = (obj.sentiment_analysis || 'not provided').toString();
+
+        return obj;
+    },
+
+    _upsertChurnRecord: function (userId, r) {
+        var tbl = 'x_snc_apex_gp_churn_risk_analysis';
+        var gr = new GlideRecord(tbl);
+        gr.addQuery('user_id', userId);
+        gr.query();
+
+        if (gr.next()) {
+            gr.setValue('risk_score', r.risk_score);
+            gr.setValue('risk_level', r.risk_level);
+            gr.setValue('detected_risk_area', r.detected_risk_area);
+            gr.setValue('contributing_factors', r.contributing_factors);
+            gr.setValue('sentiment_analysis', r.sentiment_analysis);
+            gr.setValue('intervention_required', r.intervention_required);
+            gr.setValue('intervention_status', r.intervention_status);
+            gr.setValue('last_evaluated', new GlideDateTime(r.last_evaluated));
+            gr.update();
+        } else {
+            gr.initialize();
+            gr.setValue('user_id', userId);
+            gr.setValue('risk_score', r.risk_score);
+            gr.setValue('risk_level', r.risk_level);
+            gr.setValue('detected_risk_area', r.detected_risk_area);
+            gr.setValue('contributing_factors', r.contributing_factors);
+            gr.setValue('sentiment_analysis', r.sentiment_analysis);
+            gr.setValue('intervention_required', r.intervention_required);
+            gr.setValue('intervention_status', r.intervention_status);
+            gr.setValue('last_evaluated', new GlideDateTime(r.last_evaluated));
+            gr.insert();
+        }
+    },
+
+    type: 'ApexGPChurnAIService'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 05:30:47</sys_created_on>
+        <sys_id>89c1aa91836322107f442a4279da1e81</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ApexGPChurnAIService</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_script_include_89c1aa91836322107f442a4279da1e81</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 09:03:07</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_apex_gp.RetentionAIService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>RetentionAIService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var RetentionAIService = Class.create();
+RetentionAIService.prototype = {
+    initialize: function () {},
+
+    analyzeAndRecommend: function (record) {
+        try {
+            var rm = new sn_ws.RESTMessageV2('Gemini Retention API', 'post');
+
+            // Inject dynamic placeholders
+            rm.setStringParameterNoEscape('user_id', record.getValue('user_id'));
+            rm.setStringParameterNoEscape('risk_score', record.getValue('risk_score'));
+            rm.setStringParameterNoEscape('risk_level', record.getValue('risk_level'));
+            rm.setStringParameterNoEscape('detected_risk_area', record.getValue('detected_risk_area'));
+            rm.setStringParameterNoEscape('contributing_factors', record.getValue('contributing_factors'));
+            rm.setStringParameterNoEscape('sentiment_analysis', record.getValue('sentiment_analysis'));
+            rm.setStringParameterNoEscape('intervention_required', record.getValue('intervention_required'));
+
+            var response = rm.execute();
+            var status = response.getStatusCode();
+            var body = response.getBody();
+
+            if (status != 200) {
+                gs.error('[RetentionAIService] Gemini API failed. Status=' + status + ' Body=' + body);
+                return;
+            }
+
+            var parsed = JSON.parse(body);
+            var aiText = parsed.candidates[0].content.parts[0].text;
+
+            // --- Fix: sanitize AI response ---
+            aiText = aiText.replace(/```json/g, '').replace(/```/g, '').trim();
+
+            var aiJson;
+            try {
+                aiJson = JSON.parse(aiText); // Now should succeed
+            } catch (e) {
+                gs.error('[RetentionAIService] AI response not valid JSON even after cleanup: ' + aiText);
+                return;
+            }
+
+            // Insert into Retention Implementation table
+            var gr = new GlideRecord('x_snc_apex_gp_retention_implementation');
+            gr.initialize();
+            gr.setValue('user_id', record.getValue('user_id'));
+            gr.setValue('retention_action_analysis', aiJson.retention_action_analysis || '');
+            gr.setValue('action_taken', aiJson.action_taken || '');
+            gr.setValue('internal_improvements', aiJson.internal_improvements || '');
+            gr.insert();
+
+            gs.info('[RetentionAIService] Retention recommendation stored for user ' + record.getValue('user_id'));
+
+        } catch (e) {
+            gs.error('[RetentionAIService] Exception: ' + e.message);
+        }
+    },
+
+    type: 'RetentionAIService'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-05 06:06:04</sys_created_on>
+        <sys_id>dfb661a583f322107f442a4279da1e68</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>RetentionAIService</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_script_include_dfb661a583f322107f442a4279da1e68</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-05 06:19:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

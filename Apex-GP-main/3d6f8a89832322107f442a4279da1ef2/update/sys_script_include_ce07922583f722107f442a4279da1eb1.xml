@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_apex_gp.RetentionActionExecutor</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>RetentionActionExecutor</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var RetentionActionExecutor = Class.create();
+RetentionActionExecutor.prototype = {
+    initialize: function () {},
+
+    executeActions: function (record) {
+        try {
+            var userId = record.getValue('user_id');
+            var actions = record.getValue('action_taken') || '';
+
+            // Look up customer profile for this user_id
+            var customerGR = new GlideRecord('x_snc_apex_gp_customer_profiles');
+            customerGR.addQuery('user_name', userId); // mapping user_id -> user_name
+            customerGR.query();
+
+            if (!customerGR.next()) {
+                gs.error("[RetentionActionExecutor] No customer profile found for user_id " + userId);
+                return;
+            }
+
+            var userEmail = customerGR.getValue('user_email');
+            if (!userEmail) {
+                gs.error("[RetentionActionExecutor] No email found for user_id " + userId);
+                return;
+            }
+
+            actions = actions.toLowerCase(); // make it case-insensitive
+
+            // -----------------------------
+            // 1. Email action
+            // -----------------------------
+            if (actions.indexOf("email") > -1) {
+                this._callAPI("sendemail", {
+                    email: userEmail,
+                    rejoinLink: "https://servicenow-deloite-frontend1.vercel.app/"
+                }, userId, "Email");
+            }
+
+            // -----------------------------
+            // 2. Feature unlocks and advanced module access
+            // -----------------------------
+            if (actions.indexOf("feature unlocks") > -1) {
+                this._callAPI("freetrail", {
+                    email: userEmail
+                }, userId, "Feature unlocks");
+            }
+
+            // -----------------------------
+            // 3. Free plan extensions (1-2 months premium access)
+            // -----------------------------
+            if (actions.indexOf("free plan extensions") > -1) {
+                this._callAPI("premiumextension", {
+                    email: userEmail
+                }, userId, "Premium extension");
+            }
+
+            // -----------------------------
+            // 4. Exclusive offers and time-limited discounts
+            // -----------------------------
+            if (actions.indexOf("exclusive offers") > -1 || actions.indexOf("time-limited discounts") > -1) {
+                this._callAPI("timelydiscounts", {
+                    email: userEmail
+                }, userId, "Time-limited discount");
+            }
+
+        } catch (e) {
+            gs.error("[RetentionActionExecutor] Exception: " + e.message);
+        }
+    },
+
+    _callAPI: function (restMessageName, bodyObj, userId, actionLabel) {
+        try {
+            var rm = new sn_ws.RESTMessageV2(restMessageName, 'post');
+            rm.setRequestBody(JSON.stringify(bodyObj));
+
+            var response = rm.execute();
+            var status = response.getStatusCode();
+            var respBody = response.getBody();
+
+            if (status == 200) {
+                gs.info("[RetentionActionExecutor] " + actionLabel + " API success for user " + userId);
+            } else {
+                gs.error("[RetentionActionExecutor] " + actionLabel + " API failed. Status=" + status + " Body=" + respBody);
+            }
+        } catch (ex) {
+            gs.error("[RetentionActionExecutor] Exception calling " + actionLabel + " API: " + ex.message);
+        }
+    },
+
+    type: 'RetentionActionExecutor'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-05 09:36:39</sys_created_on>
+        <sys_id>ce07922583f722107f442a4279da1eb1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>RetentionActionExecutor</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_script_include_ce07922583f722107f442a4279da1eb1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-07 23:07:09</sys_updated_on>
+    </sys_script_include>
+</record_update>
