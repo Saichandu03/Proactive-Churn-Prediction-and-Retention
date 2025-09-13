@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="54825a8d832322107f442a4279da1e7f" label="Usage pattern" max_length="40" name="x_snc_apex_gp_usage_pattern" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Using all the features or not" max_length="40" name="using_all_the_features_or_not" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+                <element inactive_on_update="false" label="No" value="no"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Timestamp" max_length="40" name="timestamp" type="glide_date_time"/>
+        <element label="Ticket Resolution Time" max_length="40" name="ticket_resolution_time" type="glide_duration"/>
+        <element label="No of Support Tickets" max_length="40" name="no_of_support_tickets" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Subscription" max_length="40" name="subscription" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pro Plan" sequence="2" value=" pro"/>
+                <element inactive_on_update="false" label="Free Plan" sequence="0" value="basic"/>
+                <element inactive_on_update="false" label="Premium Plan" sequence="1" value="premium"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Cancellation or Refund Requests" max_length="200" name="cancellation_or_refund_requests" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Feedback" max_length="400" name="feedback" type="string"/>
+        <element label="Login Frequency Count" max_length="40" name="login_frequency_count" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Communication" max_length="40" name="communication" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Considered" value="considered"/>
+                <element inactive_on_update="false" label="Ignored" value="ignored"/>
+            </choice>
+        </element>
+        <element label="Time Spent" max_length="40" name="time_spent" type="glide_duration"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Rating" max_length="40" name="rating" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="2" value="2"/>
+                <element inactive_on_update="false" label="1" value="1"/>
+                <element inactive_on_update="false" label="3" value="3"/>
+                <element inactive_on_update="false" label="4" value="4"/>
+                <element inactive_on_update="false" label="5" value="5"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="User ID" max_length="40" name="user_id" type="string"/>
+    </element>
+</database>

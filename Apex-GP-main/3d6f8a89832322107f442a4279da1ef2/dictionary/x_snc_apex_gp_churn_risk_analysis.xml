@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4ba85a85836322107f442a4279da1eb2" label="Churn Risk Analysis" max_length="40" name="x_snc_apex_gp_churn_risk_analysis" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Intervention Required" max_length="40" name="intervention_required" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" value="yes"/>
+                <element inactive_on_update="false" label="No" value="no"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Risk Level" max_length="40" name="risk_level" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Low" value="low"/>
+                <element inactive_on_update="false" label="Medium" value="medium"/>
+                <element inactive_on_update="false" label="High" value="high"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Contributing Factors" max_length="200" name="contributing_factors" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Intervention Status" max_length="40" name="intervention_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" value="in_progress"/>
+                <element inactive_on_update="false" label="Completed" value="completed"/>
+                <element inactive_on_update="false" label="Initiated" value="initiated"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Detected Risk Area" max_length="200" name="detected_risk_area" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Last Evaluated" max_length="40" name="last_evaluated" type="glide_date_time"/>
+        <element label="Risk Score" max_length="40" name="risk_score" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Sentiment Analysis" max_length="400" name="sentiment_analysis" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="User ID" max_length="40" name="user_id" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="75b234a683f722107f442a4279da1ebb" extends="sys_import_set_row" label="Imp Tmpl X Snc Apex Gp Intervention Tracking" max_length="40" name="u_imp_tmpl_x_snc_apex_gp_intervention_tracking" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Feature unlocks and advanced module access" label="Feature unlocks and advanced module access" max_length="40" name="u_feature_unlo__module_access" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Free plan extension" label="Free plan extension" max_length="40" name="u_free_plan_extension" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Exclusive offers and time-limited discounts" label="Exclusive offers and time-limited discounts" max_length="40" name="u_exclusive_of_ited_discounts" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=User ID" label="User ID" max_length="40" name="u_user_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Tailored email campaigns based on churn triggers" label="Tailored email campaigns based on churn triggers" max_length="40" name="u_tailored_ema_churn_triggers" type="string"/>
+    </element>
+</database>

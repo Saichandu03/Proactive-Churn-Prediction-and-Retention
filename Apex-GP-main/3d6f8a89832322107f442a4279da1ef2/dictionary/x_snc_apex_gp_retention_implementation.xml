@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8db74dad833322107f442a4279da1e41" label="retention implementation" max_length="40" name="x_snc_apex_gp_retention_implementation" type="collection">
+        <element label="Internal Improvements" max_length="400" name="internal_improvements" type="string"/>
+        <element label="Retention Action Analysis" max_length="400" name="retention_action_analysis" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Action Taken" max_length="400" name="action_taken" type="string"/>
+        <element label="User ID" max_length="40" name="user_id" type="string"/>
+    </element>
+</database>

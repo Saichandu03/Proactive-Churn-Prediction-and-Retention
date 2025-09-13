@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="52d0d60d832322107f442a4279da1e7a" label="Customer Profiles" max_length="40" name="x_snc_apex_gp_customer_profiles" type="collection">
+        <element choice="1" label="Subscription Plan" max_length="40" name="subscription_plan" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Premium Plan" sequence="1" value="premium"/>
+                <element inactive_on_update="false" label="Free Plan" sequence="0" value="basic"/>
+                <element inactive_on_update="false" label="Pro Plan" sequence="2" value="pro"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Mobile Number" max_length="40" name="mobile_number" type="string"/>
+        <element label="No of Enrolled Courses" max_length="255" name="no_of_enrolled_courses" type="integer"/>
+        <element label="Courses Enrolled" max_length="40" name="courses_enrolled" type="string"/>
+        <element label="No of Completed Courses" max_length="255" name="completed_courses" type="integer"/>
+        <element label="Completed Courses" max_length="40" name="completed_course" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="User ID" max_length="40" name="user_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="User Email" max_length="40" name="user_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="User Name" max_length="40" name="user_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Location" max_length="40" name="location" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Andhra Pradesh" value="andhra_pradesh"/>
+                <element inactive_on_update="false" label="Telangana" value="telangana"/>
+                <element inactive_on_update="false" label="Karnataka" value="karnataka"/>
+                <element inactive_on_update="false" label="Maharastra" value="maharastra"/>
+            </choice>
+        </element>
+    </element>
+</database>

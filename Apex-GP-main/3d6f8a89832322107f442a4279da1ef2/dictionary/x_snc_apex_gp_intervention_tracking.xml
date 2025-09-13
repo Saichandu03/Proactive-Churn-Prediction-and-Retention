@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f9ea642e83b722107f442a4279da1e38" label="Intervention Tracking" max_length="40" name="x_snc_apex_gp_intervention_tracking" type="collection">
+        <element choice="1" label="Exclusive offers and time-limited discounts" max_length="40" name="exclusive_offers_and_time_limited_discounts" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" sequence="0" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="1" value="No"/>
+            </choice>
+        </element>
+        <element label="User ID" max_length="40" name="user_id" type="string"/>
+        <element choice="1" label="Feature unlocks and advanced module access" max_length="40" name="feature_unlocks_and_advanced_module_access" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" sequence="0" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="1" value="No"/>
+            </choice>
+        </element>
+        <element choice="1" label="Tailored email campaigns based on churn triggers" max_length="40" name="tailored_email_campaigns_based_on_churn_triggers" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" sequence="0" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="1" value="No"/>
+            </choice>
+        </element>
+        <element choice="1" label="Free plan extension" max_length="40" name="free_plan_extension" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" sequence="0" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="1" value="No"/>
+            </choice>
+        </element>
+    </element>
+</database>
