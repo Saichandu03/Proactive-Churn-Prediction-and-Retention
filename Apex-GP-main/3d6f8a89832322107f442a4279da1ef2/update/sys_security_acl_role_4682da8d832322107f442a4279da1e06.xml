@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 09:43:53</sys_created_on>
+        <sys_id>4682da8d832322107f442a4279da1e06</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_apex_gp_usage_pattern.x_snc_apex_gp.app admin</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_security_acl display_value="x_snc_apex_gp_usage_pattern">c282da8d832322107f442a4279da1e03</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_4682da8d832322107f442a4279da1e06</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 09:43:53</sys_updated_on>
+        <sys_user_role display_value="x_snc_apex_gp.app admin" name="x_snc_apex_gp.app admin">f0afc289832322107f442a4279da1ed8</sys_user_role>
+    </sys_security_acl_role>
+</record_update>
