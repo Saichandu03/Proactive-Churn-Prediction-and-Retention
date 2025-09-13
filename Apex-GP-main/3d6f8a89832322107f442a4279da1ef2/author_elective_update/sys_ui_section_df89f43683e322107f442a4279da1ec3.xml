@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="df89f43683e322107f442a4279da1ec3" sys_domain="global" table="x_snc_apex_gp_saas_import_trigger" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>import_status</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 13:44:29</sys_created_on>
+            <sys_id>a389b87683e322107f442a4279da1e80</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_apex_gp_saas_import_trigger" sys_domain="global" view="Default view">df89f43683e322107f442a4279da1ec3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 13:44:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_snc_apex_gp_saas_import_trigger</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-27 13:44:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>df89f43683e322107f442a4279da1ec3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_apex_gp_saas_import_trigger</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+            <sys_update_name>sys_ui_section_df89f43683e322107f442a4279da1ec3</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-27 13:44:29</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>sys_ui_section_df89f43683e322107f442a4279da1ec3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="df89f43683e322107f442a4279da1ec3" sys_domain="global" table="x_snc_apex_gp_saas_import_trigger" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>import_status</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-27 13:44:29</sys_created_on><sys_id>a389b87683e322107f442a4279da1e80</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_snc_apex_gp_saas_import_trigger" sys_domain="global" view="Default view">df89f43683e322107f442a4279da1ec3</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-27 13:44:29</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_snc_apex_gp_saas_import_trigger</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-27 13:44:29</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>df89f43683e322107f442a4279da1ec3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_apex_gp_saas_import_trigger</sys_name><sys_overrides/><sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package><sys_policy/><sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope><sys_update_name>sys_ui_section_df89f43683e322107f442a4279da1ec3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-27 13:44:29</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-1939715647</payload_hash>
+        <record_name>SaaS Import Trigger</record_name>
+        <reverted_from/>
+        <source>756f8a89832322107f442a4279da1ef7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:44:29</sys_created_on>
+        <sys_id>2b89b87683e322107f442a4279da1e82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198ebc5de0f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 13:44:29</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>6389b87628e3221092c3f0d61106be82</update_guid>
+        <update_guid_history>6389b87628e3221092c3f0d61106be82:-1939715647,6f89b876d4e32210b80f408f3568b97b:-357825994</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 14:14:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>51697bbeb3c046fd970d84717ae28659</sys_id>
+        <sys_metadata>df89f43683e322107f442a4279da1ec3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_apex_gp_saas_import_trigger</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent display_value="">c188343683e322107f442a4279da1e34</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>sys_ui_section_df89f43683e322107f442a4279da1ec3</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_df89f43683e322107f442a4279da1ec3">2b89b87683e322107f442a4279da1e82</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 14:14:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

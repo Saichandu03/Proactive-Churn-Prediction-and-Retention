@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view">
+    <sys_ui_action_view action="DELETE">
+        <sys_class_name>sys_ui_action_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:54:59</sys_created_on>
+        <sys_id>ddfbb83a83e322107f442a4279da1ea2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import SaaS Customers.Admin View</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_ui_action display_value="Import SaaS Customers">6ef58a96836722107f442a4279da1e1e</sys_ui_action>
+        <sys_ui_view display_value="Admin View" name="admin_view">b2dc6c709f002200f45c7b9ac42e70e5</sys_ui_view>
+        <sys_update_name>sys_ui_action_view_ddfbb83a83e322107f442a4279da1ea2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 13:54:59</sys_updated_on>
+        <visibility>include</visibility>
+    </sys_ui_action_view>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>sys_ui_action_view_ddfbb83a83e322107f442a4279da1ea2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view"><sys_ui_action_view action="INSERT_OR_UPDATE"><sys_class_name>sys_ui_action_view</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-27 13:54:59</sys_created_on><sys_id>ddfbb83a83e322107f442a4279da1ea2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Import SaaS Customers.Admin View</sys_name><sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package><sys_policy/><sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope><sys_ui_action display_value="Import SaaS Customers">6ef58a96836722107f442a4279da1e1e</sys_ui_action><sys_ui_view display_value="Admin View" name="admin_view">b2dc6c709f002200f45c7b9ac42e70e5</sys_ui_view><sys_update_name>sys_ui_action_view_ddfbb83a83e322107f442a4279da1ea2</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-27 13:54:59</sys_updated_on><visibility>include</visibility></sys_ui_action_view></record_update>]]></payload>
+        <payload_hash>1427173691</payload_hash>
+        <record_name>include</record_name>
+        <reverted_from/>
+        <source>756f8a89832322107f442a4279da1ef7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:54:59</sys_created_on>
+        <sys_id>19fbb83a83e322107f442a4279da1ea6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198ebcf7a8a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 13:54:59</sys_updated_on>
+        <type>UI View Action</type>
+        <update_guid>1dfbb83a9de32210a58b823e41e239a5</update_guid>
+        <update_guid_history>1dfbb83a9de32210a58b823e41e239a5:1427173691</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-27 13:58:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action_view">sys_ui_action_view</sys_db_object>
+        <sys_id>486bfb77801f4d749ab86452ff760e10</sys_id>
+        <sys_metadata>ddfbb83a83e322107f442a4279da1ea2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import SaaS Customers.Admin View</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent display_value="Import SaaS Customers">6ef58a96836722107f442a4279da1e1e</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>sys_ui_action_view_ddfbb83a83e322107f442a4279da1ea2</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_view_ddfbb83a83e322107f442a4279da1ea2">19fbb83a83e322107f442a4279da1ea6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-27 13:58:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

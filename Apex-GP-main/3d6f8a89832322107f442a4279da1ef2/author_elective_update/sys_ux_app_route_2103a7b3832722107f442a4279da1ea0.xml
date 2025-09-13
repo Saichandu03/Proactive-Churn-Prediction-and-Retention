@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+    <sys_ux_app_route action="DELETE">
+        <app_config display_value="manager dashboard">a5069c3f832322107f442a4279da1e00</app_config>
+        <description/>
+        <extension_point/>
+        <fields/>
+        <icon/>
+        <name>View Data</name>
+        <optional_parameters/>
+        <order>0</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <parent_macroponent_composition_element_id/>
+        <route_type>view-data</route_type>
+        <screen_type display_value="View Data">a503a7b3832722107f442a4279da1e9c</screen_type>
+        <sys_class_name>sys_ux_app_route</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 04:38:50</sys_created_on>
+        <sys_id>2103a7b3832722107f442a4279da1ea0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>View Data</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_ux_app_route_2103a7b3832722107f442a4279da1ea0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 04:38:50</sys_updated_on>
+    </sys_ux_app_route>
+    <sys_translated_text action="DELETE" query="documentkey=2103a7b3832722107f442a4279da1ea0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>sys_ux_app_route_2103a7b3832722107f442a4279da1ea0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route"><sys_ux_app_route action="INSERT_OR_UPDATE"><app_config display_value="manager dashboard">a5069c3f832322107f442a4279da1e00</app_config><description/><extension_point/><fields/><icon/><name>View Data</name><optional_parameters/><order>0</order><parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent><parent_macroponent_composition_element_id/><route_type>view-data</route_type><screen_type display_value="View Data">a503a7b3832722107f442a4279da1e9c</screen_type><sys_class_name>sys_ux_app_route</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-31 04:38:50</sys_created_on><sys_id>2103a7b3832722107f442a4279da1ea0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>View Data</sys_name><sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package><sys_policy/><sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope><sys_update_name>sys_ux_app_route_2103a7b3832722107f442a4279da1ea0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-31 04:38:50</sys_updated_on></sys_ux_app_route><sys_translated_text action="delete_multiple" query="documentkey=2103a7b3832722107f442a4279da1ea0"/></record_update>]]></payload>
+        <payload_hash>-564364005</payload_hash>
+        <record_name>View Data</record_name>
+        <reverted_from/>
+        <source>438bd79f836322107f442a4279da1e07</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 04:38:50</sys_created_on>
+        <sys_id>a5032bf3832722107f442a4279da1ee7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198fe6bbe380000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 04:38:50</sys_updated_on>
+        <type>UX App Route</type>
+        <update_guid>a9032bf39d272210dd82a5ed9acd23e6</update_guid>
+        <update_guid_history>a9032bf39d272210dd82a5ed9acd23e6:-564364005</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 06:40:56</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_app_route">sys_ux_app_route</sys_db_object>
+        <sys_id>67fe50b641a9491db1b3ea880fabc3b9</sys_id>
+        <sys_metadata>2103a7b3832722107f442a4279da1ea0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>View Data</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>sys_ux_app_route_2103a7b3832722107f442a4279da1ea0</sys_update_name>
+        <sys_update_version display_value="sys_ux_app_route_2103a7b3832722107f442a4279da1ea0">a5032bf3832722107f442a4279da1ee7</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 06:40:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

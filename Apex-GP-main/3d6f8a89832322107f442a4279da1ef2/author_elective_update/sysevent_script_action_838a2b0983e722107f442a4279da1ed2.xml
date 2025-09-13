@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="DELETE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_snc_apex_gp.gemini.analyze.user</event_name>
+        <name>gemini.analyze.user</name>
+        <order>100</order>
+        <script><![CDATA[(function runAction(current, event, parm1, parm2, parm3) {
+    try {
+        var helper = new GeminiChurnHelper();
+        helper.analyzeUser(parm1); // parm1 = user_id
+    } catch (ex) {
+        gs.error("Gemini ScriptAction failed: " + ex.message);
+    }
+})(current, event, parm1, parm2, parm3);
+]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 16:10:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>838a2b0983e722107f442a4279da1ed2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>gemini.analyze.user</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sysevent_script_action_838a2b0983e722107f442a4279da1ed2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 16:10:55</sys_updated_on>
+    </sysevent_script_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>sysevent_script_action_838a2b0983e722107f442a4279da1ed2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_script_action"&gt;&lt;sysevent_script_action action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;condition_script/&gt;&lt;description/&gt;&lt;event_name&gt;x_snc_apex_gp.gemini.analyze.user&lt;/event_name&gt;&lt;name&gt;gemini.analyze.user&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[(function runAction(current, event, parm1, parm2, parm3) {
+    try {
+        var helper = new GeminiChurnHelper();
+        helper.analyzeUser(parm1); // parm1 = user_id
+    } catch (ex) {
+        gs.error("Gemini ScriptAction failed: " + ex.message);
+    }
+})(current, event, parm1, parm2, parm3);
+]]&gt;&lt;/script&gt;&lt;synchronous&gt;false&lt;/synchronous&gt;&lt;sys_class_name&gt;sysevent_script_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-08-22 16:10:55&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;838a2b0983e722107f442a4279da1ed2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;gemini.analyze.user&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Apex GP" source="x_snc_apex_gp"&gt;3d6f8a89832322107f442a4279da1ef2&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Apex GP"&gt;3d6f8a89832322107f442a4279da1ef2&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_script_action_838a2b0983e722107f442a4279da1ed2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-08-22 16:10:55&lt;/sys_updated_on&gt;&lt;/sysevent_script_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-730534359</payload_hash>
+        <record_name>gemini.analyze.user</record_name>
+        <reverted_from/>
+        <source>756f8a89832322107f442a4279da1ef7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 16:10:55</sys_created_on>
+        <sys_id>a31be34983e722107f442a4279da1e58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198d28c21440000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 16:10:55</sys_updated_on>
+        <type>Script Action</type>
+        <update_guid>a71be349aee72210c88981c433652d57</update_guid>
+        <update_guid_history>a71be349aee72210c88981c433652d57:-730534359</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 16:15:27</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_script_action">sysevent_script_action</sys_db_object>
+        <sys_id>14f8f4c453d943dd81ef0714cec89261</sys_id>
+        <sys_metadata>838a2b0983e722107f442a4279da1ed2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>gemini.analyze.user</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>sysevent_script_action_838a2b0983e722107f442a4279da1ed2</sys_update_name>
+        <sys_update_version display_value="sysevent_script_action_838a2b0983e722107f442a4279da1ed2">a31be34983e722107f442a4279da1e58</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 16:15:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

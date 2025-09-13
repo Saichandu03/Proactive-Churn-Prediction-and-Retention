@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>sync_customers</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>true</condition>
+        <form_action>false</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>true</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>sync_customers</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeAction(current, gs) {
+    try {
+        new x_snc_apex_gp.SaaSCustomerImport().importCustomers();
+        gs.addInfoMessage("✅ Customer profiles sync completed. Please refresh the list.");
+    } catch (e) {
+        gs.addErrorMessage("❌ Error syncing customers: " + e.message);
+    }
+})(current, gs);
+]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 05:42:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>48210612836722107f442a4279da1e73</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>sync_customers</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_ui_action_48210612836722107f442a4279da1e73</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-26 06:00:16</sys_updated_on>
+        <table>x_snc_apex_gp_customer_profiles</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>sys_ui_action_48210612836722107f442a4279da1e73</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;sync_customers&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;false&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;form_action&gt;false&lt;/form_action&gt;&lt;form_button&gt;false&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;true&lt;/list_action&gt;&lt;list_banner_button&gt;true&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;sync_customers&lt;/name&gt;&lt;onclick/&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[(function executeAction(current, gs) {
+    try {
+        new x_snc_apex_gp.SaaSCustomerImport().importCustomers();
+        gs.addInfoMessage("✅ Customer profiles sync completed. Please refresh the list.");
+    } catch (e) {
+        gs.addErrorMessage("❌ Error syncing customers: " + e.message);
+    }
+})(current, gs);
+]]&gt;&lt;/script&gt;&lt;show_insert&gt;false&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-08-26 05:42:05&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;48210612836722107f442a4279da1e73&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;sync_customers&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Apex GP" source="x_snc_apex_gp"&gt;3d6f8a89832322107f442a4279da1ef2&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Apex GP"&gt;3d6f8a89832322107f442a4279da1ef2&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_48210612836722107f442a4279da1e73&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-08-26 06:00:16&lt;/sys_updated_on&gt;&lt;table&gt;x_snc_apex_gp_customer_profiles&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>186175990</payload_hash>
+        <record_name>sync_customers</record_name>
+        <reverted_from/>
+        <source>756f8a89832322107f442a4279da1ef7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 06:00:16</sys_created_on>
+        <sys_id>35b54296836722107f442a4279da1eeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198e4f680a50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-26 06:00:16</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>3db542964a67221033edb068fde32dea</update_guid>
+        <update_guid_history>3db542964a67221033edb068fde32dea:186175990,2075ca56f967221050bbff7cd7e8dace:87279594,6255c6568e672210e3a961c26efb91c5:-988059033,31250656cd67221090bfba41463461c0:2128826939,139386d212672210d8c41bbb6f6eb4a7:388221555,8e820292f3672210cd2b512667d15fa4:683152442,64f1c25283672210cbe4ca1a4b286c06:783433137,db810e12fd672210ef390911abbbdf49:1435155897</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 06:01:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>1e14f9601c814ac094185cf6d6db1364</sys_id>
+        <sys_metadata>48210612836722107f442a4279da1e73</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sync_customers</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent display_value="Customer Profiles">52d0d60d832322107f442a4279da1e7a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>sys_ui_action_48210612836722107f442a4279da1e73</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_48210612836722107f442a4279da1e73">35b54296836722107f442a4279da1eeb</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-26 06:01:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

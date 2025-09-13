@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="DELETE">
+        <canvas display_value="">be9aef7f832722107f442a4279da1e42</canvas>
+        <component display_value="List - Simple">2b1c080881e05dc63b917044290b233f</component>
+        <component_props>{"table":"x_snc_apex_gp_customer_profiles","columnPreferenceKey":"","fixedQuery":"","followFilters":true,"listTitle":"Customer Profiles","columns":"","maxColumns":10,"query":"active=true","groupByField":"","limit":10,"hideViewAll":false,"hideHighlightedValues":false,"showBorder":true,"bare":false,"highlightedValueConfigId":"","hideHighlightContent":false,"highlightContent":{"patterns":[],"color":""},"hideLinks":false,"nrlLandmark":true,"wordWrap":false,"overrideWordWrapUserPref":false,"maxCharLimit":4000,"hideEmptyStateImage":false,"hidePersonalization":false,"hideDotwalk":false,"hideColumnReorder":false,"hideRowSelector":false,"hideColumnGrouping":false,"hideColumnResizing":false,"hideColumnFiltering":false,"hideColumnSorting":false,"hideHeader":false,"hideTitle":false,"hideTitleRowCount":false,"hideLastRefreshedText":false,"hideRefreshButton":false,"hideInlineEditing":false,"isDashboard":true,"id":"listTitle","value":"Customer Profiles","propLabel":"Title","noDebounce":true}</component_props>
+        <h>17</h>
+        <name/>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 05:19:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1c4ca333836722107f442a4279da1ec6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>par_dashboard_widget_1c4ca333836722107f442a4279da1ec6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 05:19:10</sys_updated_on>
+        <visualization/>
+        <w>48</w>
+        <widget_props/>
+        <x>0</x>
+        <y>0</y>
+    </par_dashboard_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</application>
+        <file_path/>
+        <instance_id>32a90151979f66905382ff671153afd8</instance_id>
+        <instance_name>mav-aug-7844-0002</instance_name>
+        <name>par_dashboard_widget_1c4ca333836722107f442a4279da1ec6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget"><par_dashboard_widget action="INSERT_OR_UPDATE"><canvas display_value="">be9aef7f832722107f442a4279da1e42</canvas><component display_value="List - Simple">2b1c080881e05dc63b917044290b233f</component><component_props>{"table":"x_snc_apex_gp_customer_profiles","columnPreferenceKey":"","fixedQuery":"","followFilters":true,"listTitle":"Customer Profiles","columns":"","maxColumns":10,"query":"active=true","groupByField":"","limit":10,"hideViewAll":false,"hideHighlightedValues":false,"showBorder":true,"bare":false,"highlightedValueConfigId":"","hideHighlightContent":false,"highlightContent":{"patterns":[],"color":""},"hideLinks":false,"nrlLandmark":true,"wordWrap":false,"overrideWordWrapUserPref":false,"maxCharLimit":4000,"hideEmptyStateImage":false,"hidePersonalization":false,"hideDotwalk":false,"hideColumnReorder":false,"hideRowSelector":false,"hideColumnGrouping":false,"hideColumnResizing":false,"hideColumnFiltering":false,"hideColumnSorting":false,"hideHeader":false,"hideTitle":false,"hideTitleRowCount":false,"hideLastRefreshedText":false,"hideRefreshButton":false,"hideInlineEditing":false,"isDashboard":true,"id":"listTitle","value":"Customer Profiles","propLabel":"Title","noDebounce":true}</component_props><h>17</h><name/><stored_component/><sys_class_name>par_dashboard_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-31 05:19:10</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>1c4ca333836722107f442a4279da1ec6</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package><sys_policy/><sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope><sys_update_name>par_dashboard_widget_1c4ca333836722107f442a4279da1ec6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-31 05:19:10</sys_updated_on><visualization/><w>48</w><widget_props/><x>0</x><y>0</y></par_dashboard_widget></record_update>]]></payload>
+        <payload_hash>-1664381633</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>438bd79f836322107f442a4279da1e07</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 05:19:10</sys_created_on>
+        <sys_id>984ca333836722107f442a4279da1ec9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198fe90a9c00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 05:19:10</sys_updated_on>
+        <type>PAR Dashboard Widget</type>
+        <update_guid>5c4ca3333d672210dc9a69e84068c8c8</update_guid>
+        <update_guid_history>5c4ca3333d672210dc9a69e84068c8c8:-1664381633</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">be1df37783a722107f442a4279da1eb8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-31 06:32:48</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_widget">par_dashboard_widget</sys_db_object>
+        <sys_id>7b506eb93c804b24b3b09aeda6ee5479</sys_id>
+        <sys_metadata>1c4ca333836722107f442a4279da1ec6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_scope_delete display_value="">5f06b0670963483b9b5c9aa046987891</sys_scope_delete>
+        <sys_update_name>par_dashboard_widget_1c4ca333836722107f442a4279da1ec6</sys_update_name>
+        <sys_update_version display_value="par_dashboard_widget_1c4ca333836722107f442a4279da1ec6">984ca333836722107f442a4279da1ec9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-31 06:32:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
