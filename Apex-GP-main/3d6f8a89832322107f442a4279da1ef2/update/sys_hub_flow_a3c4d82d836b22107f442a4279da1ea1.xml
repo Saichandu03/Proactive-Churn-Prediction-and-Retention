@@ -1,0 +1,1627 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=12695000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>whenever a customer is at risk, the manager will be notified.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>notifymanager</internal_name>
+        <label_cache>[{"name":"Created or Updated_1.current.last_evaluated","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Last Evaluated","reference":"","reference_display":"Last Evaluated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"last_evaluated","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.intervention_status","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Intervention Status","reference":"","reference_display":"Intervention Status","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"intervention_status","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"Completed","selected":false,"label":"Completed","missing":false,"image":"","used":false,"reference":false,"value":"completed","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"In Progress","selected":false,"label":"In Progress","missing":false,"image":"","used":false,"reference":false,"value":"in_progress","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Initiated","selected":false,"label":"Initiated","missing":false,"image":"","used":false,"reference":false,"value":"initiated","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.intervention_required","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Intervention Required","reference":"","reference_display":"Intervention Required","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"intervention_required","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"No","selected":false,"label":"No","missing":false,"image":"","used":false,"reference":false,"value":"no","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Yes","selected":false,"label":"Yes","missing":false,"image":"","used":false,"reference":false,"value":"yes","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.sentiment_analysis","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Sentiment Analysis","reference":"","reference_display":"Sentiment Analysis","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"sentiment_analysis","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.contributing_factors","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Contributing Factors","reference":"","reference_display":"Contributing Factors","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"contributing_factors","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.detected_risk_area","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Detected Risk Area","reference":"","reference_display":"Detected Risk Area","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"detected_risk_area","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.risk_level","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Risk Level","reference":"","reference_display":"Risk Level","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"risk_level","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"High","selected":false,"label":"High","missing":false,"image":"","used":false,"reference":false,"value":"high","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Low","selected":false,"label":"Low","missing":false,"image":"","used":false,"reference":false,"value":"low","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Medium","selected":false,"label":"Medium","missing":false,"image":"","used":false,"reference":false,"value":"medium","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.risk_score","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Risk Score","reference":"","reference_display":"Risk Score","type":"integer","base_type":"integer","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"risk_score","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.user_id","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛User ID","reference":"","reference_display":"User ID","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"user_id","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":["ah_subject",null]}},{"name":"Created or Updated_1.table_name","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Table","reference":"x_snc_apex_gp_churn_risk_analysis","reference_display":"Churn Risk Analysis","type":"table_name","base_type":"table_name","usedInstances":{},"attributes":{"test_input_hidden":"true"}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record","reference":"x_snc_apex_gp_churn_risk_analysis","reference_display":"Churn Risk Analysis","type":"reference","base_type":"reference","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":["record",null]},"attributes":{}}]</label_cache>
+        <master_snapshot>0f3505a5836f22107f442a4279da1efb</master_snapshot>
+        <master_snapshot_digest/>
+        <name>notifymanager</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>df3545a5836f22107f442a4279da1e36</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 13:51:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a3c4d82d836b22107f442a4279da1ea1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>notifymanager</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_hub_flow_a3c4d82d836b22107f442a4279da1ea1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:10</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_snc_apex_gp_churn_risk_analysis">risk_score&gt;75^risk_level=high^ORrisk_level=medium<item endquery="false" field="risk_score" goto="false" newquery="false" operator="&gt;" or="false" value="75"/>
+            <item display_value="High" endquery="false" field="risk_level" goto="false" newquery="false" operator="=" or="false" value="high"/>
+            <item display_value="Medium" endquery="false" field="risk_level" goto="false" newquery="false" operator="=" or="true" value="medium"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>true</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df3545a5836f22107f442a4279da1e36</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:09</sys_updated_on>
+        <table>x_snc_apex_gp_churn_risk_analysis</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>a3c4d82d836b22107f442a4279da1ea1</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:10</sys_created_on>
+        <sys_id>2f3545a5836f22107f442a4279da1e37</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:10</sys_updated_on>
+        <trigger display_value="">df3545a5836f22107f442a4279da1e36</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN2f3545a5836f22107f442a4279da1e37"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN2bc4d82d836b22107f442a4279da1ea3"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a3c4d82d836b22107f442a4279da1ea1</id>
+        <name>notifymanager</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 13:51:32</sys_created_on>
+        <sys_id>2bc4d82d836b22107f442a4279da1ea3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 13:51:32</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=2bc4d82d836b22107f442a4279da1ea3"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN013541a5836f22107f442a4279da1e18,0135c1a5836f22107f442a4279da1eda,c135c1a5836f22107f442a4279da1edd"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</model>
+        <model_id>a3c4d82d836b22107f442a4279da1ea1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>013541a5836f22107f442a4279da1e18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=013541a5836f22107f442a4279da1e18"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</model>
+        <model_id>a3c4d82d836b22107f442a4279da1ea1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>0135c1a5836f22107f442a4279da1eda</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0135c1a5836f22107f442a4279da1eda"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</model>
+        <model_id>a3c4d82d836b22107f442a4279da1ea1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>c135c1a5836f22107f442a4279da1edd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c135c1a5836f22107f442a4279da1edd"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN913505a5836f22107f442a4279da1e1a"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>913505a5836f22107f442a4279da1e1a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:07</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN1d3505a5836f22107f442a4279da1e1e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>1d3505a5836f22107f442a4279da1e1e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-24 07:32:19</sys_updated_on>
+        <ui_id>c1e23fce-30fb-4c6b-91e0-34a82cbe7ada</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1d226jSBp+lZIve4MDBoNJ32w2mVa3lJ4edTKzF5MRKqoKuzYYGCiSeKJIc7+PsNJqn2UfZZ9k/+LgQ+w4uOOkTVx9kY6LOvyn7/sKYuDXuw6nnaOORQe67QcWdnSzZ+r6oOe6vukG+sBxdYPQzkEnwmMGPVNG4lR+vsZhLhvu7k5ShgWjKE7RzwmVv3pGl+RpyiJxfw9dKc+SEE9+qUZACxnxkMLxztGvvx10EpzC5IKlnaO7B4eaWhdin4XQ9QKnQybQ19rKh1aLSSI/05jkYzDP43XjWTXBaXUEfTqFIzBIWqUfdNitYBFlYE6Aw4wddMY4Al/jdDJtgTDQL1E4axjxSMCUx1kWEw5xyZAYMcTGmIfohosRwqg0rNuR891m/A8wzuzJqQIGMSDSVh4RTsGizlyzV4UUDn+aHQ5OscDnIs2JyNNppGNOWFZGk7IA56E4mW8rO3xJBI+jcojAfliPjsN8HP1YBrEznWAuk3kGxrBExkY6C4uD48H5KL75Whv7gUdFFKuohDHB4fRTcM5wSkYfOAtlqqN87EPfgw4WIuV+LqSZUBQh9Jqt4xWmyrWgJwtZkcoxThIeDb0kja95sSCYP+4OQ/jQDcL4BsZnfBh1MZG+diF7uPsB2k+L5l9wyqXjn2EaGHx/0Mkm2UmIs2zmPsTf+z2X1pfBWDRHjvaKgpODScoTcQxLXbPK2fuDCm2Gu66eqTWr27k5Z4i79bKIeDhht94w8cgoTyMv5dmVhyMcTjKeLUPuRHZCX6ETOp512gyFDayeoVBW0GovKgQutZ3Nj0U/lgcq/Bkb4q+swgp+F4A5UdJCiTYkKvOmkBvoi5B7BGq7AbEpcBpjbBFLL4MXKJLMK4u+8q1Y/Btw9BR6dNv2fdvvO+asDl0SUMcPbOwQc1Z3N8C56RinV17BuXMQMpYhUrHJZphoYEuNCeDpMKcM/b02ap2dFUj8OAbiix4iBCw9/FBEd4qQ3rMUqixNJGIEyQwnoEtTk2TjTLXECAvEM5RBtrroIka88mpuxAGaxDka55mAbgKOLIBvQeqs3cVdVQ5V6+nKWmkFMLcPwP56IcCzwsYjT8RzsBvGCQ6vYnAPKkNw3fjrUJZVF9xbBuT6zpvhtIHJU+2Kl+2v4JhBtqLhAzSe140VEs31SCylaQmIc1Kk7y4o2lLz0vCQj3lRECVatwaDulFaX9YH/LK2X+fw3WX07t0xgRxkSBp9eFx4gaQXKM/A8YJjA+oVLbH/D0aAX8+LCUoqTZmQWziMCix1kZzxi6w4VG6ZJSvHQSAZ15+gvxjAzOiHNIVzso9QfKFc4pyVsSuMuQYoFTutuKiEDFWVhfIEDEtSMFWOuex0LzsIBxDJ2jw5nN3icRKyI7AmRdkoTgXkgaDLXNdNWnfsQqKHQ5bW54LdoqNMZOEXrPpezlV5Np1FNh527u+nfEPXgpfpC3glZI5vtnDu2WDxmjlOTpYt2YQ5rG/TcEUdbaGO2Qng2gsazF6oI3/bJd1g9bqk//agpv2Ni7qvinpPirq/vqzIQiFleaFxc4X9kQ9HaP46RchSgQIQsBPQv3gMArT+UmMXUpF6nK665LjdyTfcez4dlxpu59OorIrUJrCz1S70u6Nu+xDDa0sp6C1ydUwnc/gq9mYkKfacmuDRZExYGsfCh8BclRu3y85l2Y19ZGEYo884wrB/OyiHHiblscuomqr8eIxIDaERzpDPWISKC9I84AAmaCq7Q9nGsKEsls8ETkW9Zs82YYtZtEMspq2DXm3MSIK3uMyJ5GXOyppyvrJHF/0UMpwx2CVfc3ZTbKYpE7DFlQZBfhCUPhL4iqGIyV04TieoyuFa5+TPnh35WfL+yX61i2XLlFc+nR6hpWmyBEeIyMqo/ZX+e0AlshYSHoYQkkxMQjY9XkLuCPb1sJln7+E4iSNAONAUL7BT9yxKpo6onKqogPro3R3szkWKowzYb3zEXKtHXMo06gamZpl9S/MtE2sWVJlOiBHYOLi/rzOx3nhYCkFUCUtENlvCC/KoiHQGNoGhEpW39UD9ld2oqp9lgk8rTdLXTzD/J9rEzcIUrbK5+B9DOtKnhspRWZNOYNytmBoax6HgiTYztjjjLBov4uRht8qquu9FefqFtOrPYWhZ4KrKHIr3aMWfCOpxs04/Z0VFN3KkBHnVs4EtNa5htgazYzi3vWmesEJhNQL4EpsOWljpf//+1yN2zjV0u90ds2iz2EoarmavE/6tK4DEilgKQr3AMi94ASaYMq8JhiVdzJv76GwoiucoSF7VBjGSVzJAocso1lN8AQVG066ongclnFzJix5QoA2KF7LwOIDgYEPglOSulXsAjQOgV4xYrQtRXKhCVRR//rNxysoUbZbWFQ1z2rehVBYhO4dAsV1WSteyqeE6htYPWE+z+i7RfJP6GqbWQHep6zLTaoFSNnVDKeXzlHJW1Eos90Us53L+CnrZBMmt1cvm8NlfyTxj1yw8Qo8F5jvppO1Ts28HrjbQfUezmOlqrs+oFtiEBoHjO77Rb4FONnVD6eQWdLKoZKWTe6WTZc5fQSebILndOtkIPnupk6dMMCIjWoYPwrtzetlzbLffg82bwWAvZ1m9voYNh2o61h2mM9ji9Qct0Mumbii9fJ5eLle00s190c0VuX8F/WyC7Nbq5+Zw2ksdPQFeK/5eLr8T+AETEafZLl+stYlOad+3Ncywr1kOppqLdaINBrbjMDMITLfXAlFt6oYS1eeJ6qryVrK6L7K6MvuvIKxN0N1aYf0WSO2ltJ7Lr0oVdxzXQdy5U1RMfd0JfFfrDXRbs7ATaAMHtoF9v4dtU7eMHjVboKZN3VBq+jw1Xa5opaX7oqUrcv8KStoE2a1V0s3htJc6+gloLb2WsYIMfGW/5zxldOek1LQG5iCgfa1nYF2zDAKVasEP3YDKg2p1+4M2SGlTN5SUPk9KVxa1UtN9UdPV6X8FQW2C79YK6jeBSmnqucAi372T00FAiM76pubYAYW9n0E0HFBHs3SX4h78swy9BYra1A2lqFtU1LKklZ7upZ5WyX8FNW2C7behps0AtZdaeoYzgX6QEiCjunMyigM3cIjjaK7uM1mZhoaxYWo907EI7ru2YdIWyGhTN5SMPk9GF6tZKei+KOiDvL+CeDZBdGvFczMY7Ylurn/gwoonSDimseIJEgPdqB2ung6RpDxOueB/MBDPuV2LTKYYQV6mT7IQMeJj+RQQ+UgJUXbrNjdooK96pMWgr0/pb4SjK/mczMU5lx9csxCcF3sqRznmOz5n47//ebIqzMcfr1GP3sZmajv7m53ZPihd3g9dfmPPaVA6uMR4809JUISnCG/PCe/t3WuvOG815239NnfFeIrx2sp4b+quacV4S4z3sjcsK+ZTzNdC5nu7970qBlxiwNW3mqozXsWCe86Cb/k2RcWDSzz4svcFKg5UHNhCDny7t5cpBlxiwBe/o0uRoCLBFpLgm74rSPHgeh7c/l04igUVC7adBd/WvRyKA5c48OzF7p5Q9Kfor4X0d/Ymv4i/98z3xBehX/SL7BUhPPrV9M1ee9rgXZXTtwyXb6pcenVl9cLTkRiHD153+vHi89nsZafOM98xbPf7pq1ed/rslwwnN7RH0zhJKt+2/KLh3/4P9aTOn66MAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN113505a5836f22107f442a4279da1e3d,153505a5836f22107f442a4279da1e22,153505a5836f22107f442a4279da1e3c,193505a5836f22107f442a4279da1e3b,193505a5836f22107f442a4279da1e3e,1d3505a5836f22107f442a4279da1e21,1d3505a5836f22107f442a4279da1e3d,513505a5836f22107f442a4279da1e3c,553505a5836f22107f442a4279da1e3b,553505a5836f22107f442a4279da1e3e,593505a5836f22107f442a4279da1e3d,5d3505a5836f22107f442a4279da1e3c,913505a5836f22107f442a4279da1e3e,953505a5836f22107f442a4279da1e3d,993505a5836f22107f442a4279da1e3c,9d3505a5836f22107f442a4279da1e3b,d13505a5836f22107f442a4279da1e3d,d53505a5836f22107f442a4279da1e3c,d93505a5836f22107f442a4279da1e3b,dd3505a5836f22107f442a4279da1e3d"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>113505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e942c9de-d9f3-4354-b43a-4bf40cc1f6af</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>153505a5836f22107f442a4279da1e22</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>3314a15b-840e-44e6-b025-c3254499d3f4</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_required}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>153505a5836f22107f442a4279da1e3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>51f31efd-cb95-4e01-abc7-a7349bf44ba4</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_level}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>193505a5836f22107f442a4279da1e3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>19da2186-7d14-4ba3-8204-22c04cb14547</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.last_evaluated}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>193505a5836f22107f442a4279da1e3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>af9f7c77-90be-4091-aa13-2374ca59613d</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>1d3505a5836f22107f442a4279da1e21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>668cb5d1-86ac-43ed-9865-642c6a6b963a</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.contributing_factors}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>1d3505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6c0dd5b6-aeab-47ad-9a0c-88677e3ff392</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.sentiment_analysis}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>513505a5836f22107f442a4279da1e3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>746d5349-fefb-453f-854b-f0ded8a8bfb5</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_score}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>553505a5836f22107f442a4279da1e3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d8e2c5f7-362d-4a56-b8ef-d3c6d8e00ffd</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_status}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>553505a5836f22107f442a4279da1e3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>8fcc0e53-76fd-4a1c-afd7-409da2222410</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.detected_risk_area}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>593505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>2769529c-1e71-4425-a17d-0a07e0ed1958</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>5d3505a5836f22107f442a4279da1e3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>49596190-8023-4c8c-8ed9-8e833a869646</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_required}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>913505a5836f22107f442a4279da1e3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>34838fd5-21a0-41cf-84cf-01adeb2a9583</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_level}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>953505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6bd356f9-80b7-4e39-9bed-f6cdff7b7b15</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.last_evaluated}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>993505a5836f22107f442a4279da1e3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d59e2227-e055-4093-b096-0fa320ed7f09</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.contributing_factors}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>9d3505a5836f22107f442a4279da1e3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>91c7f199-9acc-497d-8a92-7be3df651979</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_score}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>d13505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>946d1971-5fe2-459c-b3db-ad4809d99e34</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_status}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>d53505a5836f22107f442a4279da1e3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>f6c889b6-951f-4954-b5ab-ffebf24fa570</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.detected_risk_area}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>d93505a5836f22107f442a4279da1e3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>ec4371e3-af11-41e7-8989-e8376d6b739b</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>a3c4d82d836b22107f442a4279da1ea1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.sentiment_analysis}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:01</sys_created_on>
+        <sys_id>dd3505a5836f22107f442a4279da1e3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:01</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>adb07fb9-2806-4a7f-8725-5b2a630412d3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>0535c1a5836f22107f442a4279da1edf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>8535c1a5836f22107f442a4279da1edc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:00</sys_created_on>
+        <sys_id>8d35c1a5836f22107f442a4279da1ed8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a3c4d82d836b22107f442a4279da1ea1"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>whenever a customer is at risk, the manager will be notified.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>notifymanager</internal_name>
+        <label_cache>[{"name":"Created or Updated_1.current.last_evaluated","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Last Evaluated","reference":"","reference_display":"Last Evaluated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"last_evaluated","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.intervention_status","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Intervention Status","reference":"","reference_display":"Intervention Status","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"intervention_status","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"Completed","selected":false,"label":"Completed","missing":false,"image":"","used":false,"reference":false,"value":"completed","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"In Progress","selected":false,"label":"In Progress","missing":false,"image":"","used":false,"reference":false,"value":"in_progress","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Initiated","selected":false,"label":"Initiated","missing":false,"image":"","used":false,"reference":false,"value":"initiated","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.intervention_required","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Intervention Required","reference":"","reference_display":"Intervention Required","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"intervention_required","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"No","selected":false,"label":"No","missing":false,"image":"","used":false,"reference":false,"value":"no","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Yes","selected":false,"label":"Yes","missing":false,"image":"","used":false,"reference":false,"value":"yes","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.sentiment_analysis","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Sentiment Analysis","reference":"","reference_display":"Sentiment Analysis","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"sentiment_analysis","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.contributing_factors","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Contributing Factors","reference":"","reference_display":"Contributing Factors","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"contributing_factors","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.detected_risk_area","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Detected Risk Area","reference":"","reference_display":"Detected Risk Area","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"detected_risk_area","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.risk_level","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Risk Level","reference":"","reference_display":"Risk Level","type":"choice","base_type":"choice","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"risk_level","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":""},{"rawLabel":"High","selected":false,"label":"High","missing":false,"image":"","used":false,"reference":false,"value":"high","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Low","selected":false,"label":"Low","missing":false,"image":"","used":false,"reference":false,"value":"low","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}},{"rawLabel":"Medium","selected":false,"label":"Medium","missing":false,"image":"","used":false,"reference":false,"value":"medium","parameters":{"name":"x_snc_apex_gp_churn_risk_analysis","dependent_values":[""]}}],"usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.risk_score","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛Risk Score","reference":"","reference_display":"Risk Score","type":"integer","base_type":"integer","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"risk_score","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":[null]}},{"name":"Created or Updated_1.current.user_id","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record➛User ID","reference":"","reference_display":"User ID","type":"string","base_type":"string","parent_table_name":"x_snc_apex_gp_churn_risk_analysis","column_name":"user_id","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":["ah_subject",null]}},{"name":"Created or Updated_1.table_name","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Table","reference":"x_snc_apex_gp_churn_risk_analysis","reference_display":"Churn Risk Analysis","type":"table_name","base_type":"table_name","usedInstances":{},"attributes":{"test_input_hidden":"true"}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Churn Risk Analysis Record","reference":"x_snc_apex_gp_churn_risk_analysis","reference_display":"Churn Risk Analysis","type":"reference","base_type":"reference","usedInstances":{"c1e23fce-30fb-4c6b-91e0-34a82cbe7ada":["record",null]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>notifymanager</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="notifymanager">a3c4d82d836b22107f442a4279da1ea1</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0f3505a5836f22107f442a4279da1efb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0f3505a5836f22107f442a4279da1efb^sys_idNOT IN833505a5836f22107f442a4279da1efd"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0f3505a5836f22107f442a4279da1efb</id>
+        <name>notifymanager</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>833505a5836f22107f442a4279da1efd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=833505a5836f22107f442a4279da1efd"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0f3505a5836f22107f442a4279da1efb^sys_idNOT IN033545a5836f22107f442a4279da1e10,4f3545a5836f22107f442a4279da1e08,c33505a5836f22107f442a4279da1efe"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="notifymanager">0f3505a5836f22107f442a4279da1efb</model>
+        <model_id>0f3505a5836f22107f442a4279da1efb</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>033545a5836f22107f442a4279da1e10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=033545a5836f22107f442a4279da1e10"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="notifymanager">0f3505a5836f22107f442a4279da1efb</model>
+        <model_id>0f3505a5836f22107f442a4279da1efb</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4f3545a5836f22107f442a4279da1e08</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4f3545a5836f22107f442a4279da1e08"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="notifymanager">0f3505a5836f22107f442a4279da1efb</model>
+        <model_id>0f3505a5836f22107f442a4279da1efb</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c33505a5836f22107f442a4279da1efe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c33505a5836f22107f442a4279da1efe"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0f3505a5836f22107f442a4279da1efb^sys_idNOT IN4f3545a5836f22107f442a4279da1e1e"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="notifymanager">0f3505a5836f22107f442a4279da1efb</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4f3545a5836f22107f442a4279da1e1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0f3505a5836f22107f442a4279da1efb^sys_idNOT INc73545a5836f22107f442a4279da1e1e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="notifymanager">0f3505a5836f22107f442a4279da1efb</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c73545a5836f22107f442a4279da1e1e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <ui_id>c1e23fce-30fb-4c6b-91e0-34a82cbe7ada</ui_id>
+        <updation_source/>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0f3505a5836f22107f442a4279da1efb^sys_idNOT IN433545a5836f22107f442a4279da1e1f,433545a5836f22107f442a4279da1e20,473545a5836f22107f442a4279da1e1f,473545a5836f22107f442a4279da1e20,4b3545a5836f22107f442a4279da1e1f,4b3545a5836f22107f442a4279da1e20,4f3545a5836f22107f442a4279da1e1f,4f3545a5836f22107f442a4279da1e20,533545a5836f22107f442a4279da1e21,573545a5836f22107f442a4279da1e21,c33545a5836f22107f442a4279da1e1f,c33545a5836f22107f442a4279da1e20,c73545a5836f22107f442a4279da1e1f,c73545a5836f22107f442a4279da1e20,cb3545a5836f22107f442a4279da1e1f,cb3545a5836f22107f442a4279da1e20,cf3545a5836f22107f442a4279da1e1e,cf3545a5836f22107f442a4279da1e1f,d33545a5836f22107f442a4279da1e21,df3545a5836f22107f442a4279da1e20"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>433545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>49596190-8023-4c8c-8ed9-8e833a869646</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.last_evaluated}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>433545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d59e2227-e055-4093-b096-0fa320ed7f09</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_level}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>473545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6bd356f9-80b7-4e39-9bed-f6cdff7b7b15</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.sentiment_analysis}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>473545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>adb07fb9-2806-4a7f-8725-5b2a630412d3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_status}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4b3545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>8fcc0e53-76fd-4a1c-afd7-409da2222410</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_level}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4b3545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>19da2186-7d14-4ba3-8204-22c04cb14547</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.contributing_factors}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4f3545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6c0dd5b6-aeab-47ad-9a0c-88677e3ff392</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.detected_risk_area}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>4f3545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>ec4371e3-af11-41e7-8989-e8376d6b739b</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.sentiment_analysis}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>533545a5836f22107f442a4279da1e21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>746d5349-fefb-453f-854b-f0ded8a8bfb5</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_score}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>573545a5836f22107f442a4279da1e21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d8e2c5f7-362d-4a56-b8ef-d3c6d8e00ffd</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.last_evaluated}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c33545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>af9f7c77-90be-4091-aa13-2374ca59613d</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c33545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e942c9de-d9f3-4354-b43a-4bf40cc1f6af</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_status}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c73545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>f6c889b6-951f-4954-b5ab-ffebf24fa570</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.contributing_factors}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c73545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>91c7f199-9acc-497d-8a92-7be3df651979</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.user_id}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>cb3545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>3314a15b-840e-44e6-b025-c3254499d3f4</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>cb3545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>668cb5d1-86ac-43ed-9865-642c6a6b963a</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.detected_risk_area}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>cf3545a5836f22107f442a4279da1e1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>2769529c-1e71-4425-a17d-0a07e0ed1958</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_required}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>cf3545a5836f22107f442a4279da1e1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>51f31efd-cb95-4e01-abc7-a7349bf44ba4</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.intervention_required}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>d33545a5836f22107f442a4279da1e21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>34838fd5-21a0-41cf-84cf-01adeb2a9583</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>0f3505a5836f22107f442a4279da1efb</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created or Updated_1.current.risk_score}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>df3545a5836f22107f442a4279da1e20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>946d1971-5fe2-459c-b3db-ad4809d99e34</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0f3505a5836f22107f442a4279da1efb"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>873545a5836f22107f442a4279da1e0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>873545a5836f22107f442a4279da1e14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:08</sys_created_on>
+        <sys_id>c33545a5836f22107f442a4279da1e06</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:08</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0f3505a5836f22107f442a4279da1efb"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0f3505a5836f22107f442a4279da1efb"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>a3c4d82d836b22107f442a4279da1ea1</sys_id>
+        <latest_snapshot>0f3505a5836f22107f442a4279da1efb</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch4-05-14-2025_06-04-2025_1836.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=a3c4d82d836b22107f442a4279da1ea1^sys_idNOT IN233545a5836f22107f442a4279da1e39"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"233545a5836f22107f442a4279da1e39","name":"plan","plan_signature":null}}</plan>
+        <plan_id>a3c4d82d836b22107f442a4279da1ea1</plan_id>
+        <snapshot>1a9780f1836322107f442a4279da1e4d</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-23 17:23:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>233545a5836f22107f442a4279da1e39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-23 17:23:10</sys_updated_on>
+        <trigger display_value="">df3545a5836f22107f442a4279da1e36</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=a3c4d82d836b22107f442a4279da1ea1"/>
+</record_update>

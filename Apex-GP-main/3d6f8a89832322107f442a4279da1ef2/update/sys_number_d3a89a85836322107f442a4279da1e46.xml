@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="INSERT_OR_UPDATE">
+        <category display_value="" name="x_snc_apex_gp_churn_risk_analysis">x_snc_apex_gp_churn_risk_analysis</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>CHU</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 10:10:43</sys_created_on>
+        <sys_id>d3a89a85836322107f442a4279da1e46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CHU</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_number_d3a89a85836322107f442a4279da1e46</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 10:10:43</sys_updated_on>
+    </sys_number>
+</record_update>
