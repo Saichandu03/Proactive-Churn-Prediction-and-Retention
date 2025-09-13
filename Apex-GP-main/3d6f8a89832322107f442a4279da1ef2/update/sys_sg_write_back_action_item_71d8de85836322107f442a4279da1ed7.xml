@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_write_back_action_item">
+    <sys_sg_write_back_action_item action="INSERT_OR_UPDATE">
+        <description/>
+        <execution_script/>
+        <name>Edit (Churn Risk Analysis)</name>
+        <parameter_screen/>
+        <query_condition table="x_snc_apex_gp_churn_risk_analysis">sys_idSTARTSWITH{{Churn Risk Analysis sys_id}}^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="{{Churn Risk Analysis sys_id}}"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </query_condition>
+        <sys_class_name>sys_sg_write_back_action_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-22 10:11:26</sys_created_on>
+        <sys_id>71d8de85836322107f442a4279da1ed7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Edit (Churn Risk Analysis)</sys_name>
+        <sys_package display_value="Apex GP" source="x_snc_apex_gp">3d6f8a89832322107f442a4279da1ef2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Apex GP">3d6f8a89832322107f442a4279da1ef2</sys_scope>
+        <sys_update_name>sys_sg_write_back_action_item_71d8de85836322107f442a4279da1ed7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-22 10:11:26</sys_updated_on>
+        <table>x_snc_apex_gp_churn_risk_analysis</table>
+        <template>contributing_factors={{Churn Risk Analysis contributing_factors}}^detected_risk_area={{Churn Risk Analysis detected_risk_area}}^intervention_required={{Churn Risk Analysis intervention_required}}^intervention_status={{Churn Risk Analysis intervention_status}}^last_evaluated={{Churn Risk Analysis last_evaluated}}^number={{Churn Risk Analysis number}}^risk_level={{Churn Risk Analysis risk_level}}^risk_score={{Churn Risk Analysis risk_score}}^sentiment_analysis={{Churn Risk Analysis sentiment_analysis}}^user_id={{Churn Risk Analysis user_id}}^EQ</template>
+        <type>update</type>
+        <use_current_record_as_condition>true</use_current_record_as_condition>
+        <use_fields_for_ref_lookup>false</use_fields_for_ref_lookup>
+    </sys_sg_write_back_action_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=71d8de85836322107f442a4279da1ed7"/>
+</record_update>
